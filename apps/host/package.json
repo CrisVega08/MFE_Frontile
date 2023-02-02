@@ -1,0 +1,19 @@
+{
+  "name": "host",
+  "version": "1.0.0",
+  "description": "Host or Container for MFE app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack serve --config config/webpack.config.js"
+  },
+  "keywords": [],
+  "author": "Frontile Depto",
+  "license": "ISC",
+  "devDependencies": {
+    "html-webpack-plugin": "^5.5.0",
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.1",
+    "webpack-dev-server": "^4.11.1"
+  }
+}

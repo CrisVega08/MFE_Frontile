@@ -1,22 +1,21 @@
-// webpack config
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { ModuleFederationPlugin } = require('webpack').container;
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   mode: 'development',
   devServer: {
-    port: 8081
+    port: 8080,
   },
   plugins: [
     new ModuleFederationPlugin({
-      name: 'landing',
-      filename: 'remoteEntry.js',
-      exposes: {
-        './LandingApp': './src/index',
+      name: 'host',
+      remotes: {
+        landingRemote: 'landing@http://localhost:8081/remoteEntry.js'
       }
     }),
     new HtmlWebpackPlugin({
+      title: 'Host Page',
       template: './public/index.html'
-    })
+    }),
   ]
 }
