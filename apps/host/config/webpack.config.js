@@ -30,7 +30,32 @@ module.exports = {
             plugins: ['@babel/plugin-transform-runtime']
           }
         }
-      }
+      },
+      {
+        test: /\.s[ac]ss$/i,
+        use: [
+          // Creates `style` nodes from JS strings
+          { 
+            loader: 'style-loader',
+            options: { esModule: false }
+          },
+          // Translates CSS into CommonJS
+          {
+            loader: "css-loader",
+            options: {
+              importLoaders: 1,
+              modules: true
+            }
+          },
+          // Compiles Sass to CSS
+          "sass-loader",
+        ],
+      },
+      {
+        test: /\.css$/i,
+        use: ["style-loader", "css-loader"],
+      },
+      
     ]
   }
 }

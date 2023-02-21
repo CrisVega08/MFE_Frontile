@@ -8,5 +8,5 @@ export default () => {
     renderLanding(ref.current)
   }, []);
 
-  return <div ref={ref} />
+  return <div ref={ref} style={{'flex':1}} />
 }

@@ -1,0 +1,22 @@
+.nav {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 25px;
+  height: 70px;
+}
+
+.links {
+  flex-grow: 0.4;
+  display: flex;
+  justify-content: space-around;
+}
+
+.link {
+  list-style: none;
+
+  a {
+    text-decoration: none;
+    color: #382126;
+  }
+}
